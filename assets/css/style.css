@@ -1,0 +1,266 @@
+/* Custom Styles for Hardy.Digital */
+
+/* Smooth Scrolling & Base */
+* {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes pulse-subtle {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+/* Fade in sections on load */
+section {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* Navigation hover effects */
+nav a {
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #2563eb;
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Hero section enhancements */
+#hero h1 {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* JTBD Canvas - The Standout Element */
+#jtbd-canvas {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+#jtbd-canvas:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* JTBD Diagram Animations */
+.jtbd-circle {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.jtbd-circle:hover {
+    filter: brightness(1.1);
+}
+
+.jtbd-text {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.jtbd-text:hover {
+    font-weight: 600;
+}
+
+.jtbd-line {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: draw-line 2s ease-out forwards;
+}
+
+@keyframes draw-line {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+.jtbd-pulse {
+    animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse-ring {
+    0% {
+        opacity: 1;
+        transform: scale(0.95);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(1.05);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(0.95);
+    }
+}
+
+/* Service cards hover effect */
+#services > div > div {
+    position: relative;
+    overflow: hidden;
+}
+
+#services > div > div::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.05), transparent);
+    transition: left 0.5s ease;
+}
+
+#services > div > div:hover::before {
+    left: 100%;
+}
+
+/* Client cards */
+#clients > div > div > div {
+    transition: all 0.3s ease;
+}
+
+#clients > div > div > div:hover {
+    transform: translateY(-4px);
+}
+
+/* Contact icons hover */
+#contact a {
+    position: relative;
+    overflow: hidden;
+}
+
+#contact a::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(37, 99, 235, 0.1);
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease, height 0.3s ease;
+}
+
+#contact a:hover::before {
+    width: 120%;
+    height: 120%;
+}
+
+/* Smooth transitions for all interactive elements */
+a, button {
+    transition: all 0.3s ease;
+}
+
+/* Custom gradient backgrounds */
+.gradient-text {
+    background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Mobile menu slide in */
+#mobile-menu {
+    transition: all 0.3s ease;
+}
+
+#mobile-menu.show {
+    display: block;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive typography */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Focus states for accessibility */
+a:focus, button:focus {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+}
+
+/* Loading state */
+body.loading {
+    opacity: 0;
+}
+
+body.loaded {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+/* Smooth scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
