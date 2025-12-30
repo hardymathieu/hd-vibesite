@@ -16,10 +16,11 @@ body {
         #3b82f6 35%,   /* Blue */
         #8b5cf6 65%,   /* Purple */
         #eab308 100%   /* Yellow */
-    );
-    background-size: 400% 400%;
-    animation: gradient-shift 15s ease infinite;
+    ) !important;
+    background-size: 400% 400% !important;
+    animation: gradient-shift 15s ease infinite !important;
 }
+
 
 @keyframes gradient-shift {
     0% {
