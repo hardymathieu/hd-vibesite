@@ -26,6 +26,7 @@ body {
     animation: gradient-shift 15s ease infinite !important;
 }
 
+
 @keyframes gradient-shift {
     0% {
         background-position: 0% 50%;
